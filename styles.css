@@ -1,0 +1,147 @@
+@import url("fonts/TT-Bricks/stylesheet.css");
+:root {
+  --color-yellow: #FFCF40;
+  --color-green: #008000;
+  --color-blue: #0047AB;
+  --color-purple: #7851A9;
+  --color-pink: #F400A1;
+  --color-orange: #F36223;
+  --color-grey: #646B63;
+  --color-lime: #ADFF2F;
+  --color-red: #F8173E;
+  --color-coral: #FF7F50;
+}
+
+.colors__yellow {
+  background-color: var(--color-yellow);
+}
+.colors__green {
+  background-color: var(--color-green);
+}
+.colors__blue {
+  background-color: var(--color-blue);
+}
+.colors__purple {
+  background-color: var(--color-purple);
+}
+.colors__pink {
+  background-color: var(--color-pink);
+}
+.colors__orange {
+  background-color: var(--color-orange);
+}
+.colors__grey {
+  background-color: var(--color-grey);
+}
+.colors__lime {
+  background-color: var(--color-lime);
+}
+.colors__red {
+  background-color: var(--color-red);
+}
+.colors__coral {
+  background-color: var(--color-coral);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.center__block {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.center__wrap {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.header, .like-and-cart__like, .like-and-cart__cart {
+  margin: 0 20px;
+}
+
+.like-and-cart__like-div, .like-and-cart__cart-div {
+  position: relative;
+}
+
+.like-and-cart__like-count, .like-and-cart__cart-count {
+  position: absolute;
+  right: 42px;
+  top: 10px;
+  color: red;
+  text-align: center;
+  font-family: TT Bricks;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.block {
+  background-color: rebeccapurple;
+  width: 200px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.buy-button {
+  height: 50px;
+  background-color: red;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.favorite {
+  height: 30px;
+  width: 30px;
+}
+
+.text {
+  margin: 0;
+  text-align: center;
+  font-family: TT Bricks;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #00377B;
+}
+.text__price {
+  font-size: 24px;
+}
+
+.likes {
+  color: red;
+}
+
+.filter_hidden, .filter_hidden2 {
+  display: none;
+}
+
+.filter {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=styles.css.map */
