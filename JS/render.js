@@ -50,7 +50,6 @@ const blockRender = (socks, blocks) => {
     socks.forEach(item => {
         render(item, blocks)
     })
-
     document.body.appendChild(blocks)
 }
 

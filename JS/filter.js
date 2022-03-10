@@ -98,7 +98,7 @@ search.addEventListener("click", () => {
     }
     console.log(filteredSocks)
     blockRender(filteredSocks, blocks)
-    addLikes();
+    addLikes(filteredSocks);
     addCart();
     filteredSocks=[];
 })

@@ -19,11 +19,8 @@ blocks.classList.add("center", "center__wrap", "main-block");
 blockRender(socks, blocks); // Рендер Блоков в div
 
 
-addLikes(); // Функция для кнопки "Добавление в Favorite"
-addCart();  // Функция для кнопки "Добавление в Cart"
-
-
-console.log(socks);
+addLikes(socks); // Функция для кнопки "Добавление в Favorite"
+addCart(socks);  // Функция для кнопки "Добавление в Cart"
 
 
 export {blocks}
