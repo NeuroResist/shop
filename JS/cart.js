@@ -33,6 +33,6 @@ blockRender(filtered, blocks); // Рендер Блоков в div
 addLikes(filtered); // Функция для кнопки "Добавление в Favorite"
 addCart(filtered);  // Функция для кнопки "Добавление в Cart"
 cross(filtered); // Функция отрисовки и onclick для Крестика
-cartTotalItems(filtered) // Функция отрисовки Total и
+cartTotalItems(filtered) // Функция отрисовки Total
 totalPrice();
 export {blocks}

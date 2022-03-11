@@ -2,11 +2,12 @@
 
 
 const addLikes = (filtered) => {
-    let likes = JSON.parse(localStorage.getItem("likes"));
-    let socks = JSON.parse(localStorage.getItem("socks"));
+
 
     document.querySelectorAll(".favorite").forEach((item, i) => {
         item.addEventListener("click", (event) => {
+            let likes = JSON.parse(localStorage.getItem("likes"));
+            let socks = JSON.parse(localStorage.getItem("socks"));
             if (!filtered[i].like) {
                 filtered[i].like = true;
                 likes++;
@@ -24,12 +25,13 @@ const addLikes = (filtered) => {
                     }
                 })
             })
-            console.log(socks)
+
             if (item.getAttribute("src") == "img/heart/red_heart.svg") {
                 item.setAttribute("src", "img/heart/black_heart.svg")
             } else {
                 item.setAttribute("src", "img/heart/red_heart.svg")
             }
+
             document.querySelector(".like-and-cart__like-count").innerText = likes;
             localStorage.setItem("socks", JSON.stringify(socks));
             console.log(likes);
@@ -38,11 +40,12 @@ const addLikes = (filtered) => {
 }
 
 const addCart = (filtered) => {
-    let socks = JSON.parse(localStorage.getItem("socks"));
-    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
 
     document.querySelectorAll(".buy-button").forEach((item, i) => {
         item.addEventListener("click", () => {
+            let socks = JSON.parse(localStorage.getItem("socks"));
+            let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
             if (!filtered[i].cart) {
                 filtered[i].cart = true;
                 cartItems++;
@@ -62,6 +65,7 @@ const addCart = (filtered) => {
             })
 
             const crosses = document.querySelectorAll(".cross");
+            console.log(item.textContent)
             if (item.textContent == "В корзину") {
                 if(crosses.length) crosses[i].style.transform = "rotate(0)";
                 item.innerText = "Из корзины";
@@ -72,7 +76,6 @@ const addCart = (filtered) => {
 
             document.querySelector(".like-and-cart__cart-count").innerText = cartItems;
             localStorage.setItem("socks", JSON.stringify(socks));
-            console.log(cartItems);
         })
     })
 }
