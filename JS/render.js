@@ -1,5 +1,6 @@
 // Функция рендера блоков по 1
-const render = (item, blocks) => {
+let likeCounter = 0
+const render = (item, blocks, index) => {
 
     const block = document.createElement('div');     // Создание блока для контента
     block.classList.add("block", "center__block", "center")
@@ -17,10 +18,32 @@ const render = (item, blocks) => {
 
     const buyAndFavorite = document.createElement('div');
     buyAndFavorite.classList.add("center", "margin-bottom")
+
     const buy = document.createElement('button');
     const favorite = document.createElement('img');
+
+    favorite.onclick = () => {
+        const socks = JSON.parse(localStorage.getItem("socks"))
+        let sock = socks.find(sock => sock.id === item.id)
+
+        if (!sock.like) {
+            likeCounter++;
+            favorite.src = "img/heart/red_heart.svg"
+        } else {
+            likeCounter--;
+            favorite.src = "img/heart/black_heart.svg"
+        }
+        sock.like = !sock.like
+
+        localStorage.setItem("socks", JSON.stringify(socks))
+        console.log(JSON.parse(localStorage.getItem("socks")))
+
+        document.querySelector(".like-and-cart__like-count").innerHTML = likeCounter
+    }
+
     buyAndFavorite.appendChild(buy);
     buyAndFavorite.appendChild(favorite);
+
     if (!item.like) {
         favorite.setAttribute("src", "img/heart/black_heart.svg");
     } else {
@@ -42,18 +65,17 @@ const render = (item, blocks) => {
     block.appendChild(buyAndFavorite)
     blocks.appendChild(block);
 
+
 }
 
 // Рендер каждого блока по массиву, 1 элемент - 1 блок
 const blockRender = (socks, blocks) => {
 
-    socks.forEach(item => {
-        render(item, blocks)
+    socks.forEach((item, index) => {
+        render(item, blocks, index)
     })
     document.body.appendChild(blocks)
 }
-
-
 
 
 export {blockRender, render};

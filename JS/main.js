@@ -2,8 +2,10 @@ import {blockRender, render} from "./render.js"
 import {addLikes, addCart} from "./addCartLikes.js"
 
 // Отрисовать корзину и лайки
-document.querySelector(".like-and-cart__like-count").innerHTML=JSON.parse(localStorage.getItem("likes"))
+document.querySelector(".like-and-cart__like-count").innerHTML=localStorage.getItem("likes")
 document.querySelector(".like-and-cart__cart-count").innerHTML=JSON.parse(localStorage.getItem("cartItems"))
+
+console.log(localStorage.getItem("likes"))
 
 // Взятие носков с параметрами
 const socks = JSON.parse(localStorage.getItem("socks"));

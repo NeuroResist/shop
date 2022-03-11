@@ -1,4 +1,4 @@
-import {blockRender, render} from "./render.js"
+import {blockRender} from "./render.js"
 import {blocks} from "./main.js"
 import {addLikes, addCart} from "./addCartLikes.js"
 
@@ -15,11 +15,11 @@ const filter = document.querySelector("#select");
 let filterType = "";
 // Выбор фильтра, наговнокодил
 filter.addEventListener("change", () => {
-    if (filter.value == "like") {filterType="like"}
-    if (filter.value == "cart") {filterType="cart"}
-    if (filter.value == "none") {filterType="none"}
-    if (filter.value == "color" || filter.value == "price") {
-        if (filter.value == "color") {
+    if (filter.value === "like") {filterType="like"}
+    if (filter.value === "cart") {filterType="cart"}
+    if (filter.value === "none") {filterType="none"}
+    if (filter.value === "color" || filter.value === "price") {
+        if (filter.value === "color") {
             filterType = "color";
             document.querySelector(".filter_hidden").classList.add("filter");
             document.querySelector(".filter_hidden2").classList.remove("filter");
@@ -36,35 +36,40 @@ filter.addEventListener("change", () => {
 
 // Взятие значение из input и выполнить поиск
 const search = document.querySelector(".search");
-let firstInput="";
 let secondInput="";
 search.addEventListener("click", () => {
     const socks = JSON.parse(localStorage.getItem("socks"));
+    const firstInput = document.querySelector(".filter_hidden").value;
 
     // Color
-    if(filterType == "color"){
-         firstInput = document.querySelector(".filter_hidden").value;
-         socks.forEach((item)=>{
-             if(item.name == firstInput) {
-                 filteredSocks.push(item);
-             }
-         })
+    if (filterType == "color") {
+
+        filteredSocks = socks.filter(sock => sock.name === firstInput) //используй фильтры
+
+        // socks.forEach((item) => {
+        //     if (item.name == firstInput) {
+        //         filteredSocks.push(item);
+        //     }
+        // })
     }
 
     // Price
     if(filterType == "price") {
-        firstInput = document.querySelector(".filter_hidden").value;
+        // firstInput = document.querySelector(".filter_hidden").value;
         secondInput = document.querySelector(".filter_hidden2").value;
-        if(!firstInput){firstInput=0}
+
+        // if(!firstInput){firstInput=0}
         if(!secondInput){secondInput=1000}
-        console.log(+firstInput + "___" + +secondInput)
+
+        !secondInput && (secondInput=1000)
+        // console.log(+firstInput + "___" + +secondInput)
 
         socks.forEach((item)=>{
             if(item.price>=+firstInput && item.price<=+secondInput) {
                 filteredSocks.push(item);
             }
         })
-        console.log(filteredSocks);
+        // console.log(filteredSocks);
     }
 
     // Like
@@ -87,7 +92,7 @@ search.addEventListener("click", () => {
 
     // None
     if(filterType == "none"){
-        filteredSocks = socks.slice();
+        filteredSocks = socks;
     }
 
     // Render
@@ -96,7 +101,7 @@ search.addEventListener("click", () => {
         const children = document.querySelector(".main-block");
         while (children.firstChild) children.removeChild(children.firstChild);
     }
-    console.log(filteredSocks)
+    // console.log(filteredSocks)
     blockRender(filteredSocks, blocks)
     addLikes(filteredSocks);
     addCart(filteredSocks);
