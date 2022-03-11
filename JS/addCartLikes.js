@@ -35,26 +35,41 @@ const addLikes = (filtered) => {
             console.log(likes);
         })
     })
-
 }
 
-const addCart = () => {
+const addCart = (filtered) => {
     let socks = JSON.parse(localStorage.getItem("socks"));
-
     let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
     document.querySelectorAll(".buy-button").forEach((item, i) => {
         item.addEventListener("click", () => {
-            if (!socks[i].cart) {
-                socks[i].cart = true;
+            if (!filtered[i].cart) {
+                filtered[i].cart = true;
                 cartItems++;
                 localStorage.setItem("cartItems", JSON.stringify(cartItems));
-                item.innerText = "Из корзины";
             } else {
-                socks[i].cart = false;
+                filtered[i].cart = false;
                 cartItems--;
                 localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            }
+
+            filtered.forEach((filter) => {
+                socks.forEach((original)=>{
+                    if (original.id == filter.id) {
+                        original.cart = filter.cart;
+                    }
+                })
+            })
+
+            const crosses = document.querySelectorAll(".cross");
+            if (item.textContent == "В корзину") {
+                if(crosses.length) crosses[i].style.transform = "rotate(0)";
+                item.innerText = "Из корзины";
+            } else {
+                if(crosses.length) crosses[i].style.transform = "rotate(45deg)";
                 item.innerText = "В корзину";
             }
+
             document.querySelector(".like-and-cart__cart-count").innerText = cartItems;
             localStorage.setItem("socks", JSON.stringify(socks));
             console.log(cartItems);

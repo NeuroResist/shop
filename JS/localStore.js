@@ -7,7 +7,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/yellow.svg",
             price: 100,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 2,
@@ -15,7 +16,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/green.svg",
             price: 200,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 3,
@@ -23,7 +25,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/blue.svg",
             price: 300,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 4,
@@ -31,7 +34,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/purple.svg",
             price: 400,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 5,
@@ -39,7 +43,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/pink.svg",
             price: 500,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 6,
@@ -47,7 +52,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/orange.svg",
             price: 600,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 7,
@@ -55,7 +61,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/grey.svg",
             price: 700,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 8,
@@ -63,7 +70,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/lime.svg",
             price: 800,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 9,
@@ -71,7 +79,8 @@ if(!localStorage.getItem("socks")){
             price: 900,
             img: "/img/socks/red.svg",
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         },
         {
             id: 10,
@@ -79,7 +88,8 @@ if(!localStorage.getItem("socks")){
             img: "/img/socks/coral.svg",
             price: 1000,
             like: false,
-            cart: false
+            cart: false,
+            total: 0
         }
     ]
     localStorage.setItem("socks",JSON.stringify(socks));
@@ -89,4 +99,7 @@ if(!localStorage.getItem("likes")){
 }
 if(!localStorage.getItem("cartItems")){
     localStorage.setItem("cartItems",  JSON.stringify(0));
+}
+if (!localStorage.getItem("totalPrice")){
+    let totalPrice = 0;
 }

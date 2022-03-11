@@ -74,6 +74,10 @@ main {
   justify-content: flex-start;
 }
 
+.red {
+  color: red;
+}
+
 .header, .like-and-cart__like, .like-and-cart__cart {
   margin: 0 20px;
 }
@@ -131,6 +135,10 @@ main {
 .text__price {
   font-size: 24px;
 }
+.text__total {
+  font-size: 20px;
+  line-height: normal;
+}
 
 .likes {
   color: red;
@@ -142,6 +150,12 @@ main {
 
 .filter {
   display: inline-block;
+}
+
+.total {
+  display: inline-block;
+  width: 200px;
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=styles.css.map */

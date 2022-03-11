@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/img/cart.ico">
-    <title>Socks Shop</title>
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
 </head>
 <body>
+
+
 <header class="header center">
     <a href="main.html"><img src="img/ozon_logo.svg" alt="logo"></a>
+
+
 
     <div class="like-and-cart center">
         <div class="like-and-cart__like-div">
@@ -20,26 +28,18 @@
     </div>
 </header>
 
-<main>
-    Выберите параметры фильтра:
-    <select size="1" name="" id="select">
-        <option value="none">Без фильтра</option>
-        <option value="color">Цвет</option>
-        <option value="price">Цена</option>
-        <option value="like">Лайкнутые</option>
-        <option value="cart">В корзине</option>
-    </select>
-    <input type="text" name="text" class="filter_hidden">
 
+    <div class="total">
+        Total: <p class="totalPrice"></p>
+    </div>
 
-    <input type="text" name="text1" class="filter_hidden2">
-    <button class="search">Применить</button>
-</main>
 
 <script src="JS/localStore.js"></script>
-<script type="module" src="JS/main.js"></script>
-<script type="module" src="JS/filter.js"></script>
+<script type="module" src="JS/cartGenerator.js"></script>
 <script type="module" src="JS/render.js"></script>
+<script type="module" src="JS/cart.js"></script>
+<script type="module" src="JS/addCartLikes.js"></script>
+<script type="module" src="JS/cartTotal.js"></script>
 
 
 </body>
