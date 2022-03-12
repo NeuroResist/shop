@@ -1,5 +1,4 @@
-import {blockRender, render} from "./render.js"
-import {addLikes, addCart} from "./addCartLikes.js"
+import {blockRender} from "./render.js"
 
 // Отрисовать корзину и лайки
 document.querySelector(".like-and-cart__like-count").innerHTML=localStorage.getItem("likes")
@@ -21,8 +20,7 @@ blocks.classList.add("center", "center__wrap", "main-block");
 blockRender(socks, blocks); // Рендер Блоков в div
 
 
-addLikes(socks); // Функция для кнопки "Добавление в Favorite"
-addCart(socks);  // Функция для кнопки "Добавление в Cart"
+
 
 
 export {blocks}

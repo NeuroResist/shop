@@ -1,5 +1,4 @@
-// Функция рендера блоков по 1
-let likeCounter = 0
+
 const render = (item, blocks, index) => {
 
     const block = document.createElement('div');     // Создание блока для контента
@@ -27,21 +26,46 @@ const render = (item, blocks, index) => {
     favorite.onclick = () => {
         const socks = JSON.parse(localStorage.getItem("socks"))
         let sock = socks.find(sock => sock.id === item.id)
+        let likeCounter = localStorage.getItem("likes")
 
         if (!sock.like) {
             likeCounter++;
-            favorite.src = "img/heart/red_heart.svg"
+            favorite.setAttribute("src", "img/heart/red_heart.svg");
         } else {
             likeCounter--;
-            favorite.src = "img/heart/black_heart.svg"
+            favorite.setAttribute("src", "img/heart/black_heart.svg");
         }
-        sock.like = !sock.like
+        sock.like = !sock.like ;
 
         localStorage.setItem("socks", JSON.stringify(socks))
-        console.log(JSON.parse(localStorage.getItem("socks")))
 
-        document.querySelector(".like-and-cart__like-count").innerHTML = likeCounter
+        localStorage.setItem("likes", likeCounter)
+        document.querySelector(".like-and-cart__like-count").innerHTML = likeCounter;
     }
+
+    buy.onclick = () => {
+        const socks = JSON.parse(localStorage.getItem("socks"))
+        let sock = socks.find(sock => sock.id === item.id)
+        let buyCounter = localStorage.getItem("cartItems")
+
+        if (!sock.cart) {
+            buyCounter++;
+            buy.innerHTML = "Из корзины";
+
+        } else {
+            buyCounter--;
+            buy.innerHTML = "В корзину";
+
+        }
+        sock.cart = !sock.cart ;
+
+        localStorage.setItem("socks", JSON.stringify(socks))
+
+        localStorage.setItem("cartItems", buyCounter)
+        document.querySelector(".like-and-cart__cart-count").innerHTML = buyCounter;
+    }
+
+
 
     buyAndFavorite.appendChild(buy);
     buyAndFavorite.appendChild(favorite);

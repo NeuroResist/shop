@@ -1,5 +1,4 @@
 import {blockRender, render} from "./render.js"
-import {addLikes, addCart} from "./addCartLikes.js"
 
 // Отрисовать корзину и лайки
 document.querySelector(".like-and-cart__like-count").innerHTML=JSON.parse(localStorage.getItem("likes"))

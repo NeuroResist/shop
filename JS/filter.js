@@ -1,6 +1,5 @@
 import {blockRender} from "./render.js"
 import {blocks} from "./main.js"
-import {addLikes, addCart} from "./addCartLikes.js"
 
 
 
@@ -12,7 +11,7 @@ let filteredSocks = [];
 
 // Фильтр
 const filter = document.querySelector("#select");
-let filterType = "";
+let filterType = "none";
 // Выбор фильтра, наговнокодил
 filter.addEventListener("change", () => {
     if (filter.value === "like") {filterType="like"}
@@ -103,8 +102,6 @@ search.addEventListener("click", () => {
     }
     // console.log(filteredSocks)
     blockRender(filteredSocks, blocks)
-    addLikes(filteredSocks);
-    addCart(filteredSocks);
     filteredSocks=[];
 })
 
