@@ -1,4 +1,6 @@
 @import url("../fonts/Gilroy/stylesheet.css");
+@import url("../fonts/TT-Bricks/stylesheet.css");
+
 :root{
   --color-yellow: #FFCF40;
   --color-green: #008000;
@@ -25,7 +27,7 @@
   &__coral  {background-color: var(--color-coral);}
 }
 
-@mixin center {
+@mixin centerMixin {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +80,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
 }
 .dot{
   width: 30px;
@@ -92,9 +95,68 @@
   }
   &__left-cross, &__right-cross{
     background-color:#E89F71;
-    @include center;
+    @include centerMixin;
   }
 }
+
+.center{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  &__block{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  &__wrap{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+.text {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  text-align: center;
+  color: #3A3A3A;
+  &__price {
+    font-size: 24px;
+  }
+}
+
+.text-h1{
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  text-align: center;
+  color: #3A3A3A;
+  margin-bottom: 30px;
+}
+
 .dot__left-cross{
   transform: rotate(180deg);
+}
+.margin-bottom{
+  margin-bottom: 10px;
+}
+.main-block{
+  display: flex;
+}
+.favorite{
+  height: 30px;
+  width: 30px;
+}
+.block{
+  background-color: rebeccapurple;
+  width: 200px;
+}
+.buy-button{
+  height: 50px;
+  background-color: red;
+  margin-right: 10px;
+  cursor: pointer;
 }

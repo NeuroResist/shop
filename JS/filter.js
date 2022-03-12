@@ -2,11 +2,8 @@ import {blockRender} from "./render.js"
 import {blocks} from "./main.js"
 
 
-
 // Отфильтрованные носки
 let filteredSocks = [];
-
-
 
 
 // Фильтр
