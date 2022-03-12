@@ -22,6 +22,8 @@ const render = (item, blocks, index) => {
     const buy = document.createElement('button');
     const favorite = document.createElement('img');
 
+    // При рендере добавление
+
     favorite.onclick = () => {
         const socks = JSON.parse(localStorage.getItem("socks"))
         let sock = socks.find(sock => sock.id === item.id)

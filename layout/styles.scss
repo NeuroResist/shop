@@ -1,0 +1,100 @@
+@import url("../fonts/Gilroy/stylesheet.css");
+:root{
+  --color-yellow: #FFCF40;
+  --color-green: #008000;
+  --color-blue: #0047AB;
+  --color-purple: #7851A9;
+  --color-pink: #F400A1;
+  --color-orange: #F36223;
+  --color-grey: #646B63;
+  --color-lime: #ADFF2F;
+  --color-red: #F8173E;
+  --color-coral: #FF7F50;
+}
+
+.colors{
+  &__yellow {background-color: var(--color-yellow);}
+  &__green  {background-color: var(--color-green);}
+  &__blue   {background-color: var(--color-blue);}
+  &__purple {background-color: var(--color-purple);}
+  &__pink   {background-color: var(--color-pink);}
+  &__orange {background-color: var(--color-orange);}
+  &__grey   {background-color: var(--color-grey);}
+  &__lime   {background-color: var(--color-lime);}
+  &__red    {background-color: var(--color-red);}
+  &__coral  {background-color: var(--color-coral);}
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.content{
+  max-width: 1277px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  margin: 40px 0 40px 0;
+}
+.logo-text{
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+.avatar{
+  width: 40px;
+  height: 40px;
+}
+.cartLikeAvatar{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cartLikeAvatar > a{
+  margin: 0 10px 0 10px;
+}
+.search{
+  margin: 0 20px 0 20px;
+  width: 473px;
+  height: 45px;
+}
+
+.points{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dot{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 5px;
+  &_focused{
+    background-color:#E89F71;
+  }
+  &_unfocused{
+    background-color: #D8D8D8;
+  }
+  &__left-cross, &__right-cross{
+    background-color:#E89F71;
+    @include center;
+  }
+}
+.dot__left-cross{
+  transform: rotate(180deg);
+}

@@ -1,0 +1,121 @@
+@import url("../fonts/Gilroy/stylesheet.css");
+:root {
+  --color-yellow: #FFCF40;
+  --color-green: #008000;
+  --color-blue: #0047AB;
+  --color-purple: #7851A9;
+  --color-pink: #F400A1;
+  --color-orange: #F36223;
+  --color-grey: #646B63;
+  --color-lime: #ADFF2F;
+  --color-red: #F8173E;
+  --color-coral: #FF7F50;
+}
+
+.colors__yellow {
+  background-color: var(--color-yellow);
+}
+.colors__green {
+  background-color: var(--color-green);
+}
+.colors__blue {
+  background-color: var(--color-blue);
+}
+.colors__purple {
+  background-color: var(--color-purple);
+}
+.colors__pink {
+  background-color: var(--color-pink);
+}
+.colors__orange {
+  background-color: var(--color-orange);
+}
+.colors__grey {
+  background-color: var(--color-grey);
+}
+.colors__lime {
+  background-color: var(--color-lime);
+}
+.colors__red {
+  background-color: var(--color-red);
+}
+.colors__coral {
+  background-color: var(--color-coral);
+}
+
+.content {
+  max-width: 1277px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  margin: 40px 0 40px 0;
+}
+
+.logo-text {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.cartLikeAvatar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cartLikeAvatar > a {
+  margin: 0 10px 0 10px;
+}
+
+.search {
+  margin: 0 20px 0 20px;
+  width: 473px;
+  height: 45px;
+}
+
+.points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.dot_focused {
+  background-color: #E89F71;
+}
+.dot_unfocused {
+  background-color: #D8D8D8;
+}
+.dot__left-cross, .dot__right-cross {
+  background-color: #E89F71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot__left-cross {
+  transform: rotate(180deg);
+}
+
+/*# sourceMappingURL=styles.css.map */
