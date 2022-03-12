@@ -117,9 +117,10 @@
 }
 
 .center {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
 }
 .center__block {
@@ -172,16 +173,166 @@
   width: 30px;
 }
 
-.block {
-  background-color: rebeccapurple;
-  width: 200px;
-}
-
 .buy-button {
   height: 50px;
   background-color: red;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.circle {
+  top: 24px;
+  right: 24px;
+  background-color: #2EC1AC;
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+}
+.circle__sale {
+  background-color: #E97171;
+}
+.circle__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+
+.block {
+  background-color: #F4F5F7;
+  width: 285px;
+  margin-bottom: 16px;
+}
+
+.block__name {
+  margin: 16px 0 8px 16px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #3A3A3A;
+}
+.block__description {
+  margin: 0 0 8px 16px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #898989;
+}
+.block__price {
+  margin: 0 0 0 16px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #3A3A3A;
+  padding-bottom: 30px;
+}
+
+.cartLikeShare {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #3A3A3A;
+  display: none;
+}
+.hover .a, .hover a {
+  text-decoration: none;
+}
+.hover__input {
+  cursor: pointer;
+  margin-bottom: 32px;
+  z-index: 2;
+  border: none;
+  width: 202px;
+  height: 48px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #E89F71;
+}
+
+.block:hover .hover {
+  opacity: 0.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.block:hover .cartLikeShare {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-div {
+  z-index: 10;
+  display: flex;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+.block-div__margin {
+  text-decoration: none;
+  margin-left: 10px;
+}
+.block-div__share {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+.block-div__like {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+
+.show-more {
+  display: flex;
+  justify-content: center;
+}
+.show-more__button {
+  cursor: pointer;
+  width: 245px;
+  height: 48px;
+  background: #FFFFFF;
+  border: 1px solid #E89F71;
+}
+.show-more__text {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #E89F71;
 }
 
 /*# sourceMappingURL=styles.css.map */

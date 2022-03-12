@@ -3,93 +3,99 @@ if(!localStorage.getItem("socks")){
     const socks = [
         {
             id: 1,
-            name: "yellow",
-            img: "/img/socks/yellow.svg",
+            name: "Syltherine",
+            img: "../img/Furniture/1.svg",
             price: 100,
+            description: "Stylish cafe chair",
             like: false,
             cart: false,
-            total: 0
+            total: 0,
+            sale: 0,
+            isNew: false
         },
         {
             id: 2,
-            name: "green",
-            img: "/img/socks/green.svg",
+            name: "Leviosa",
+            img: "../img/Furniture/2.svg",
+            description: "Stylish cafe chair",
             price: 200,
             like: false,
             cart: false,
-            total: 0
+            total: 0,
+            sale: 0,
+            isNew: true
         },
         {
             id: 3,
-            name: "blue",
-            img: "/img/socks/blue.svg",
+            name: "Lolito",
+            img: "../img/Furniture/3.svg",
             price: 300,
+            description: "Luxury big sofa",
             like: false,
             cart: false,
-            total: 0
+            total: 0,
+            sale: 0,
+            isNew: true
         },
         {
             id: 4,
-            name: "purple",
-            img: "/img/socks/purple.svg",
+            name: "Respira",
+            img: "../img/Furniture/4.svg",
             price: 400,
+            description: "Minimalist fan",
             like: false,
             cart: false,
-            total: 0
+            total: 0,
+            sale: 70,
+            isNew: false
         },
         {
             id: 5,
-            name: "pink",
-            img: "/img/socks/pink.svg",
+            name: "Grifo",
+            img: "../img/Furniture/5.svg",
             price: 500,
+            description: "Night lamp",
             like: false,
             cart: false,
-            total: 0
+            total: 0,
+            sale: 0,
+            isNew: false
         },
         {
             id: 6,
-            name: "orange",
-            img: "/img/socks/orange.svg",
+            name: "Muggo",
+            img: "../img/Furniture/6.svg",
             price: 600,
+            description: "Small mug",
             like: false,
             cart: false,
-            total: 0
+            total: 0,
+            sale: 75,
+            isNew: false
         },
         {
             id: 7,
-            name: "grey",
-            img: "/img/socks/grey.svg",
+            name: "Pingky",
+            img: "../img/Furniture/7.svg",
             price: 700,
+            description: "Cute bed set",
             like: false,
             cart: false,
-            total: 0
+            total: 0,
+            sale: 30,
+            isNew: true
         },
         {
             id: 8,
-            name: "lime",
-            img: "/img/socks/lime.svg",
+            name: "Potty",
+            img: "../img/Furniture/8.svg",
             price: 800,
+            description: "Minimalist flower pot",
             like: false,
             cart: false,
-            total: 0
-        },
-        {
-            id: 9,
-            name: "red",
-            price: 900,
-            img: "/img/socks/red.svg",
-            like: false,
-            cart: false,
-            total: 0
-        },
-        {
-            id: 10,
-            name: "coral",
-            img: "/img/socks/coral.svg",
-            price: 1000,
-            like: false,
-            cart: false,
-            total: 0
+            total: 0,
+            sale: 0,
+            isNew: false
         }
     ]
     localStorage.setItem("socks",JSON.stringify(socks));
