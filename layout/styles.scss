@@ -67,7 +67,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.cartLikeAvatar > a{
+.cartLikeAvatar > div > a{
   margin: 0 10px 0 10px;
 }
 .search{
@@ -75,7 +75,14 @@
   width: 473px;
   height: 45px;
 }
-
+.cartCount, .likeCount {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+.relative{
+  position: relative;
+}
 .points{
   display: flex;
   justify-content: center;

@@ -93,7 +93,7 @@ const render = (item, blocks, index) => {
 
     const buy = blockButton;
     const favorite = blockLikeA;
-    
+
 
     const cartLikeShare = document.createElement('div');
     cartLikeShare.appendChild(blockButton);
@@ -136,7 +136,7 @@ const render = (item, blocks, index) => {
         localStorage.setItem("socks", JSON.stringify(socks))
 
         localStorage.setItem("likes", likeCounter)
-        //document.querySelector(".like-and-cart__like-count").innerHTML = likeCounter;
+        document.querySelector(".likeCount").innerHTML = likeCounter;
     }
 
     buy.onclick = () => {
@@ -158,7 +158,7 @@ const render = (item, blocks, index) => {
         localStorage.setItem("socks", JSON.stringify(socks))
 
         localStorage.setItem("cartItems", buyCounter)
-        //document.querySelector(".like-and-cart__cart-count").innerHTML = buyCounter;
+        document.querySelector(".cartCount").innerHTML = buyCounter;
     }
 
 

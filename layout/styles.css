@@ -80,7 +80,7 @@
   align-items: center;
 }
 
-.cartLikeAvatar > a {
+.cartLikeAvatar > div > a {
   margin: 0 10px 0 10px;
 }
 
@@ -88,6 +88,16 @@
   margin: 0 20px 0 20px;
   width: 473px;
   height: 45px;
+}
+
+.cartCount, .likeCount {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+
+.relative {
+  position: relative;
 }
 
 .points {
