@@ -17,8 +17,8 @@ if(!localStorage.getItem("socks")){
             id: 2,
             name: "Leviosa",
             img: "../img/Furniture/2.svg",
-            description: "Stylish cafe chair",
             price: 200,
+            description: "Stylish cafe chair",
             like: false,
             cart: false,
             total: 0,
@@ -101,10 +101,10 @@ if(!localStorage.getItem("socks")){
     localStorage.setItem("socks",JSON.stringify(socks));
 }
 if(!localStorage.getItem("likes")){
-    localStorage.setItem("likes",  JSON.stringify(0));
+    localStorage.setItem("likes",  "0");
 }
 if(!localStorage.getItem("cartItems")){
-    localStorage.setItem("cartItems",  JSON.stringify(0));
+    localStorage.setItem("cartItems", "0");
 }
 if (!localStorage.getItem("totalPrice")){
     let totalPrice = 0;

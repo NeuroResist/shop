@@ -12,7 +12,7 @@ const render = (item, blocks, index) => {
     price.innerHTML = "Rp " + item.price;
     price.classList.add("text", "block__price")
 
-    const name = document.createElement('h5');      // Добавление Названия
+    const name = document.createElement('p');      // Добавление Названия
     name.innerHTML = item.name;
     name.classList.add("block__name")
 
@@ -21,60 +21,6 @@ const render = (item, blocks, index) => {
     description.innerHTML = item.description;
     description.classList.add("block__description")
 
-    const buyAndFavorite = document.createElement('div');
-    buyAndFavorite.classList.add("center", "margin-bottom")
-
-    const buy = document.createElement('button');
-    const favorite = document.createElement('img');
-
-    // При рендере добавление
-
-    favorite.onclick = () => {
-        const socks = JSON.parse(localStorage.getItem("socks"))
-        let sock = socks.find(sock => sock.id === item.id)
-        let likeCounter = localStorage.getItem("likes")
-
-        if (!sock.like) {
-            likeCounter++;
-            favorite.setAttribute("src", "../img/heart/red_heart.svg");
-        } else {
-            likeCounter--;
-            favorite.setAttribute("src", "../img/heart/black_heart.svg");
-        }
-        sock.like = !sock.like ;
-
-        localStorage.setItem("socks", JSON.stringify(socks))
-
-        localStorage.setItem("likes", likeCounter)
-        //document.querySelector(".like-and-cart__like-count").innerHTML = likeCounter;
-    }
-
-    buy.onclick = () => {
-        const socks = JSON.parse(localStorage.getItem("socks"))
-        let sock = socks.find(sock => sock.id === item.id)
-        let buyCounter = localStorage.getItem("cartItems")
-
-        if (!sock.cart) {
-            buyCounter++;
-            buy.innerHTML = "Из корзины";
-
-        } else {
-            buyCounter--;
-            buy.innerHTML = "В корзину";
-
-        }
-        sock.cart = !sock.cart ;
-
-        localStorage.setItem("socks", JSON.stringify(socks))
-
-        localStorage.setItem("cartItems", buyCounter)
-        //document.querySelector(".like-and-cart__cart-count").innerHTML = buyCounter;
-    }
-
-
-
-    buyAndFavorite.appendChild(buy);
-    buyAndFavorite.appendChild(favorite);
 
 
     if(item.isNew){
@@ -101,21 +47,6 @@ const render = (item, blocks, index) => {
     }
 
 
-    if (!item.like) {
-        favorite.setAttribute("src", "../img/heart/black_heart.svg");
-    } else {
-        favorite.setAttribute("src", "../img/heart/red_heart.svg");
-    }
-    favorite.classList.add("favorite");
-
-    if (!item.cart) {
-        buy.innerHTML = "В корзину";
-    } else {
-        buy.innerHTML = "Из корзины";
-    }
-    buy.classList.add("center", "buy-button", "text__price")
-
-
 
 
     const hover = document.createElement('div');      // Добавление Названия
@@ -126,48 +57,43 @@ const render = (item, blocks, index) => {
     const blockShare = document.createElement('div');
     const blockShareA = document.createElement('a');
     const blockShareImg = document.createElement('img');
-    const blockShareP = document.createElement('p');
     const blockLike = document.createElement('div');
-    const blockLikeA = document.createElement('a');
+    const blockLikeA = document.createElement('div');
     const blockLikeImg = document.createElement('img');
-    const blockLikeP = document.createElement('p');
 
-    blockButton.appendChild(blockInputP);
-    blockInputP.innerText = "Add to cart";
+    blockButton.innerText = "Add to cart";
     blockButton.classList.add("hover__input");
+    blockLikeImg.setAttribute("src", "../img/Furniture/Like.svg");
+    blockLikeImg.style.marginRight = "10px"
 
     blockDiv.appendChild(blockButton);
-    blockShareP.innerText = "Share";
     blockShareImg.setAttribute("src", "../img/Furniture/Share.svg");
+    blockShareImg.style.marginRight = "10px";
 
     blockDiv.classList.add("block-div");
 
     blockDiv.appendChild(blockShare);
     blockShare.classList.add("block-div__share")
-    blockShare.appendChild(blockShareImg)
     blockShare.appendChild(blockShareA)
-    blockShareA.appendChild(blockShareP)
+    blockShareA.textContent = "Share";
+    blockShareA.prepend(blockShareImg)
 
     blockDiv.appendChild(blockLike);
     blockLike.classList.add("block-div__like")
-    blockLike.appendChild(blockLikeImg);
-
     blockLike.appendChild(blockLikeA);
-    blockLikeA.appendChild(blockLikeP);
+    blockLikeA.textContent = "Like";
+    blockLikeA.prepend(blockLikeImg);
 
-
-    blockShareP.classList.add("block-div__margin")
-    blockLikeP.classList.add("block-div__margin")
 
     blockShareA.setAttribute("href","#")
-    blockShareA.classList.add("a")
+    blockShareA.classList.add("link")
     blockLikeA.setAttribute("href","#")
-    blockLikeA.classList.add("a")
+    blockLikeA.classList.add("link")
+    blockLikeA.classList.add("link__like")
 
-    blockLikeP.innerText = "Like";
-    blockLikeImg.setAttribute("src", "../img/Furniture/Like.svg");
-
-
+    const buy = blockButton;
+    const favorite = blockLikeA;
+    
 
     const cartLikeShare = document.createElement('div');
     cartLikeShare.appendChild(blockButton);
@@ -190,11 +116,80 @@ const render = (item, blocks, index) => {
     blocks.appendChild(block);
 
 
+    // При рендере добавление Лайков и В корзину
+
+    favorite.onclick = () => {
+        console.log("ddsfdsf")
+        const socks = JSON.parse(localStorage.getItem("socks"))
+        let sock = socks.find(sock => sock.id === item.id)
+        let likeCounter = localStorage.getItem("likes")
+
+        if (!sock.like) {
+            likeCounter++;
+            favorite.firstChild.setAttribute("src", "../img/Furniture/Like-red.svg");
+        } else {
+            likeCounter--;
+            favorite.firstChild.setAttribute("src", "../img/Furniture/Like.svg");
+        }
+        sock.like = !sock.like ;
+
+        localStorage.setItem("socks", JSON.stringify(socks))
+
+        localStorage.setItem("likes", likeCounter)
+        //document.querySelector(".like-and-cart__like-count").innerHTML = likeCounter;
+    }
+
+    buy.onclick = () => {
+        const socks = JSON.parse(localStorage.getItem("socks"))
+        let sock = socks.find(sock => sock.id === item.id)
+        let buyCounter = localStorage.getItem("cartItems")
+
+        if (!sock.cart) {
+            buyCounter++;
+            buy.innerHTML = "Remove from cart";
+
+        } else {
+            buyCounter--;
+            buy.innerHTML = "Add to cart";
+
+        }
+        sock.cart = !sock.cart ;
+
+        localStorage.setItem("socks", JSON.stringify(socks))
+
+        localStorage.setItem("cartItems", buyCounter)
+        //document.querySelector(".like-and-cart__cart-count").innerHTML = buyCounter;
+    }
+
+
+
+
+    if (!item.like) {
+        favorite.firstChild.setAttribute("src", "../img/Furniture/Like.svg");
+
+    } else {
+        favorite.firstChild.setAttribute("src", "../img/Furniture/Like-red.svg");
+    }
+
+    if (!item.cart) {
+        buy.innerHTML = "Add to cart";
+    } else {
+        buy.innerHTML = "Remove from cart";
+    }
+
+
+
+
+
+
+
+
+
+
 }
 
 // Рендер каждого блока по массиву, 1 элемент - 1 блок
 const blockRender = (socks, blocks) => {
-    console.log(document.querySelector(".main-block"))
     socks.forEach((item, index) => {
         render(item, blocks, index)
     })
