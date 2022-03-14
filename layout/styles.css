@@ -1,55 +1,35 @@
+@charset "UTF-8";
 @import url("../fonts/Gilroy/stylesheet.css");
 @import url("../fonts/TT-Bricks/stylesheet.css");
-:root {
-  --color-yellow: #FFCF40;
-  --color-green: #008000;
-  --color-blue: #0047AB;
-  --color-purple: #7851A9;
-  --color-pink: #F400A1;
-  --color-orange: #F36223;
-  --color-grey: #646B63;
-  --color-lime: #ADFF2F;
-  --color-red: #F8173E;
-  --color-coral: #FF7F50;
+body {
+  overflow-x: hidden;
+  /*для горизонтального*/
 }
 
-.colors__yellow {
-  background-color: var(--color-yellow);
-}
-.colors__green {
-  background-color: var(--color-green);
-}
-.colors__blue {
-  background-color: var(--color-blue);
-}
-.colors__purple {
-  background-color: var(--color-purple);
-}
-.colors__pink {
-  background-color: var(--color-pink);
-}
-.colors__orange {
-  background-color: var(--color-orange);
-}
-.colors__grey {
-  background-color: var(--color-grey);
-}
-.colors__lime {
-  background-color: var(--color-lime);
-}
-.colors__red {
-  background-color: var(--color-red);
-}
-.colors__coral {
-  background-color: var(--color-coral);
+main {
+  position: relative;
 }
 
-.content {
-  max-width: 1277px;
+.relative {
+  position: relative;
+}
+
+.margin-right-32 {
+  margin-right: 32px;
+}
+
+.container {
+  max-width: 1237px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding-right: 20px;
-  padding-left: 20px;
+}
+
+.display-flex {
+  display: flex;
+}
+.display-flex__center {
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -57,7 +37,8 @@
   justify-content: space-between;
   align-items: center;
   height: 45px;
-  margin: 40px 0 40px 0;
+  position: relative;
+  padding: 40px 0 40px 0;
 }
 
 .logo-text {
@@ -80,24 +61,151 @@
   align-items: center;
 }
 
-.cartLikeAvatar > div > a {
-  margin: 0 10px 0 10px;
-}
-
-.search {
-  margin: 0 20px 0 20px;
-  width: 473px;
-  height: 45px;
+.apricot-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .cartCount, .likeCount {
+  color: white;
+  line-height: 14px;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 50%;
+  border: 2px white solid;
+  background-color: red;
   position: absolute;
-  top: 5px;
-  left: 15px;
+  top: -5px;
+  left: 10px;
 }
 
-.relative {
+.high-quality-block {
+  position: absolute;
+  top: 16px;
+  left: 100px;
+  width: 494px;
+  height: 553px;
+  background-color: white;
+  z-index: 3;
+}
+.high-quality-block__padding {
+  padding: 60px;
+}
+.high-quality-block__header {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 120%;
+  color: #3A3A3A;
+  margin-bottom: 16px;
+}
+.high-quality-block__paragraph {
+  max-width: 90%;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #898989;
+  margin-bottom: 48px;
+}
+.high-quality-block__shop-now-button {
+  height: 78px;
+  width: 374px;
+  border-radius: 0;
+  background: #E89F71;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+
+.three-background-img {
+  top: 96px;
   position: relative;
+  height: 553px;
+  margin-bottom: 202px;
+}
+.three-background-img__left-img {
+  position: absolute;
+  left: 0;
+}
+.three-background-img__center-img {
+  position: absolute;
+  left: 406px;
+}
+.three-background-img__right-img {
+  position: absolute;
+  left: 1372px;
+}
+
+.bohauss-center-img__bohauss-block {
+  position: absolute;
+  top: 365px;
+  left: 600px;
+  width: 294px;
+  height: 148px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.bohauss-block__header {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 120%;
+  color: #3A3A3A;
+  margin-bottom: 4px;
+}
+.bohauss-block__description {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 8px;
+  color: #616161;
+}
+.bohauss-block__price {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #3A3A3A;
+}
+
+.customer-assistance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 104px;
+}
+.customer-assistance__description {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #898989;
+}
+.customer-assistance__header {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  color: #3A3A3A;
+}
+.customer-assistance__icon {
+  margin: 0 24px;
 }
 
 .points {
@@ -115,6 +223,9 @@
 }
 .dot_focused {
   background-color: #E89F71;
+}
+.dot__left-cross {
+  transform: rotate(180deg);
 }
 .dot_unfocused {
   background-color: #D8D8D8;
@@ -153,38 +264,24 @@
   font-size: 24px;
 }
 
-.out-products {
+.headline {
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
   line-height: 120%;
   color: #3A3A3A;
-  margin-bottom: 30px;
-}
-
-.dot__left-cross {
-  transform: rotate(180deg);
+  margin-bottom: 32px;
+  text-align: center;
 }
 
 .margin-bottom {
   margin-bottom: 10px;
 }
 
-.main-block {
+.block-with-furniture {
   display: flex;
-}
-
-.favorite {
-  height: 30px;
-  width: 30px;
-}
-
-.buy-button {
-  height: 50px;
-  background-color: red;
-  margin-right: 10px;
-  cursor: pointer;
+  justify-content: center;
 }
 
 .circle {
@@ -215,6 +312,168 @@
   background-color: #F4F5F7;
   width: 285px;
   margin-bottom: 16px;
+}
+
+.tips-tricks {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.tips-tricks__cross {
+  cursor: pointer;
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tips-tricks__cross-left {
+  top: 161px;
+  left: -24px;
+}
+.tips-tricks__cross-left > img {
+  transform: rotate(180deg);
+}
+.tips-tricks__cross-right {
+  top: 161px;
+  right: -24px;
+}
+.tips-tricks__text-content {
+  padding: 16px;
+}
+.tips-tricks__block {
+  max-width: 391px;
+  max-height: 370px;
+  box-shadow: 5px 1px 18px 4px rgba(34, 60, 80, 0.2);
+}
+.tips-tricks__header {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #3A3A3A;
+  margin-bottom: 8px;
+}
+.tips-tricks__date {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #898989;
+}
+
+.gallery {
+  margin-bottom: 40px;
+}
+.gallery__header-Share-your-setup-with {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  color: #616161;
+  margin-bottom: 8px;
+}
+.gallery__header-Funiro-Furniture {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  text-align: center;
+  color: #3A3A3A;
+}
+
+.margin-bottom-16px {
+  margin-bottom: 16px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-content__header {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+.footer-content__text {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #616161;
+}
+.footer-content__contact {
+  max-width: 249px;
+}
+.footer-content__account {
+  max-width: 94px;
+}
+.footer-content__stay-connected {
+  max-width: 180px;
+}
+.footer-content__menu {
+  max-width: 104px;
+}
+.footer-content__stay-updated {
+  max-width: 292px;
+}
+.footer-content__location, .footer-content__phone {
+  display: flex;
+  align-items: center;
+}
+
+.list__element {
+  list-style-type: none;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #616161;
+  margin-top: 16px;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.band {
+  height: 2px;
+  background-color: #D8D8D8;
+  margin-bottom: 80px;
+}
+
+.email-send-button {
+  width: 46px;
+  height: 46px;
+  background-color: #E89F71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#email {
+  margin-right: 4px;
+  width: 242px;
+  height: 45px;
+  background: #F4F5F7;
+  border: none;
+}
+
+.margin-left-10px {
+  margin-left: 10px;
 }
 
 .block__name {

@@ -39,7 +39,7 @@ show.onclick = () => {
         let child = blocks.childNodes;
         child.forEach((item,i)=>{
             if(i>=4){
-                child.item(i).style.display = "block";
+                item.style.display = "block";
             }
         });
 
@@ -48,7 +48,7 @@ show.onclick = () => {
         let child = blocks.childNodes;
         child.forEach((item,i)=>{
             if(i>=4){
-                child.item(i).style.display = "none";
+                item.style.display = "none";
             }
         });
         show.innerText = "Show More";

@@ -1,5 +1,5 @@
 
-const render = (item, blocks, index) => {
+const render = (item, blocks) => {
 
     const block = document.createElement('div');     // Создание блока для контента
     block.classList.add("block", "center__block", "center")
@@ -112,14 +112,13 @@ const render = (item, blocks, index) => {
 
     block.appendChild(hover);
     //block.appendChild(buyAndFavorite)
-    block.style.margin = "0 12px 32px 12px"
+    block.style.margin = "0 12px 28px 12px"
     blocks.appendChild(block);
 
 
     // При рендере добавление Лайков и В корзину
 
     favorite.onclick = () => {
-        console.log("ddsfdsf")
         const socks = JSON.parse(localStorage.getItem("socks"))
         let sock = socks.find(sock => sock.id === item.id)
         let likeCounter = localStorage.getItem("likes")
@@ -178,7 +177,10 @@ const render = (item, blocks, index) => {
     }
 
 
-
+    let buyCounter = localStorage.getItem("cartItems")
+    let likeCounter = localStorage.getItem("likes")
+    document.querySelector(".likeCount").innerHTML = likeCounter;
+    document.querySelector(".cartCount").innerHTML = buyCounter;
 
 
 
@@ -194,7 +196,7 @@ const blockRender = (socks, blocks) => {
         render(item, blocks, index)
     })
 
-    document.querySelector(".main-block").appendChild(blocks)
+    document.querySelector(".block-with-furniture").appendChild(blocks)
 }
 
 

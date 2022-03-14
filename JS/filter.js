@@ -93,8 +93,8 @@ search.addEventListener("click", () => {
 
     // Render
 
-    if(document.querySelector(".main-block").hasChildNodes()){
-        const children = document.querySelector(".main-block");
+    if(document.querySelector(".block-with-furniture").hasChildNodes()){
+        const children = document.querySelector(".block-with-furniture");
         while (children.firstChild) children.removeChild(children.firstChild);
     }
     // console.log(filteredSocks)
