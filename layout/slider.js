@@ -14,7 +14,7 @@ const slider = () => {
         }
 
     });
-
+//dsadasds
     rightCross.onclick = (() => {
         dots.forEach((item, i) => {
             if (item.classList.contains("dot_focused") && !(dots[dots.length])) {
