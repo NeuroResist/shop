@@ -1,8 +1,7 @@
-import {blockRender, render} from "./render.js"
-import {addLikes, addCart} from "./addCartLikes.js"
+import {blockRender} from "./render.js"
 
 // Отрисовать корзину и лайки
-document.querySelector(".like-and-cart__like-count").innerHTML=JSON.parse(localStorage.getItem("likes"))
+document.querySelector(".like-and-cart__like-count").innerHTML=localStorage.getItem("likes")
 document.querySelector(".like-and-cart__cart-count").innerHTML=JSON.parse(localStorage.getItem("cartItems"))
 
 // Взятие носков с параметрами
@@ -19,8 +18,7 @@ blocks.classList.add("center", "center__wrap", "main-block");
 blockRender(socks, blocks); // Рендер Блоков в div
 
 
-addLikes(socks); // Функция для кнопки "Добавление в Favorite"
-addCart(socks);  // Функция для кнопки "Добавление в Cart"
+
 
 
 export {blocks}

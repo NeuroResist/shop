@@ -1,5 +1,4 @@
 import {blockRender, render} from "./render.js"
-import {addLikes, addCart} from "./addCartLikes.js"
 import {totalRender} from "./cartGenerator.js"
 import {cross, cartTotalItems, totalPrice} from "./cartTotal.js"
 

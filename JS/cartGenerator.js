@@ -1,4 +1,3 @@
-
 const render = (item, blocks) => {
 
     const block = document.createElement('div');     // Создание блока для контента
@@ -42,13 +41,11 @@ const render = (item, blocks) => {
 
 // Рендер каждого блока по массиву, 1 элемент - 1 блок
 const totalRender = (socks, blocks) => {
-    socks.forEach(item => {
-        render(item, blocks)
+    socks.forEach((item, index) => {
+        render(item, blocks, index)
     })
     document.body.appendChild(blocks)
 }
-
-
 
 
 export {totalRender};
