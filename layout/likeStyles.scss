@@ -82,7 +82,7 @@ main{
   top:0;
   left: 0;
   z-index: -1;
-  height: 774px;
+  height: 131px;
   width: 964px;
   background-color: #F9F1E7;
 }
@@ -292,7 +292,7 @@ main{
   align-items: flex-start;
   flex-direction: row;
   &__block{
-display: block;
+    display: block;
   }
   &__wrap{
     flex-wrap: wrap;
@@ -502,6 +502,78 @@ display: block;
 }
 
 
+// Для страницы Cart
+// Всего денег в Корзине
+.totalMoneyBlock{
+  width: 260px;
+  &__price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 150%;
+    color: #000;
+  }
+  &__total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+  }
+  &__promo{
+    width: 250px;
+    height: 30px;
+    border: grey 2px solid;
+    border-radius: 10px;
+  }
+  &__count-of-money{
+
+  }
+}
+.block-with-cart-items{
+  display: flex;
+}
+
+.block-for-header-and-counter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter{
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  height: 30px;
+  background-color: red;
+  border-radius: 12px 12px 12px 12px / 12px 12px 12px 12px;
+  &__counterLeftCross{
+    width: 30px;
+    background-color: blue;
+    border-radius: 12px 0px 0px 12px / 12px 0px 0px 12px;
+  }
+  &__counterRightCross{
+    width: 30px;
+    background-color: green;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-radius: 0px 12px 12px 0px / 0px 12px 12px 0px;
+  }
+  &__counterNumber{
+    display: flex;
+    align-items: center;
+  }
+}
+
+
 
 // footer
 .band{
@@ -628,6 +700,7 @@ display: block;
     margin-left: 24px;
   }
 }
+
 
 
 
