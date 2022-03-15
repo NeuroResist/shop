@@ -1,6 +1,6 @@
 
-if(!localStorage.getItem("socks")){
-    const socks = [
+if(!localStorage.getItem("goods")){
+    const goods = [
         {
             id: 1,
             name: "Syltherine",
@@ -9,7 +9,7 @@ if(!localStorage.getItem("socks")){
             description: "Stylish cafe chair",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 0,
             isNew: false
         },
@@ -21,7 +21,7 @@ if(!localStorage.getItem("socks")){
             description: "Stylish cafe chair",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 0,
             isNew: true
         },
@@ -33,7 +33,7 @@ if(!localStorage.getItem("socks")){
             description: "Luxury big sofa",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 0,
             isNew: true
         },
@@ -45,7 +45,7 @@ if(!localStorage.getItem("socks")){
             description: "Minimalist fan",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 70,
             isNew: false
         },
@@ -57,7 +57,7 @@ if(!localStorage.getItem("socks")){
             description: "Night lamp",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 0,
             isNew: false
         },
@@ -69,7 +69,7 @@ if(!localStorage.getItem("socks")){
             description: "Small mug",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 75,
             isNew: false
         },
@@ -81,7 +81,7 @@ if(!localStorage.getItem("socks")){
             description: "Cute bed set",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 30,
             isNew: true
         },
@@ -93,12 +93,12 @@ if(!localStorage.getItem("socks")){
             description: "Minimalist flower pot",
             like: false,
             cart: false,
-            total: 0,
+            total: 1,
             sale: 0,
             isNew: false
         }
     ]
-    localStorage.setItem("socks",JSON.stringify(socks));
+    localStorage.setItem("goods",JSON.stringify(goods));
 }
 if(!localStorage.getItem("likes")){
     localStorage.setItem("likes",  "0");
@@ -107,5 +107,5 @@ if(!localStorage.getItem("cartItems")){
     localStorage.setItem("cartItems", "0");
 }
 if (!localStorage.getItem("totalPrice")){
-    let totalPrice = 0;
+    localStorage.setItem("totalPrice", "0");
 }

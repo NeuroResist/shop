@@ -70,7 +70,7 @@ main {
   top: 0;
   left: 0;
   z-index: -1;
-  height: 774px;
+  height: 131px;
   width: 964px;
   background-color: #F9F1E7;
 }
@@ -484,6 +484,72 @@ main {
   color: #616161;
 }
 
+.totalMoneyBlock {
+  width: 260px;
+}
+.totalMoneyBlock__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 150%;
+  color: #000;
+}
+.totalMoneyBlock__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+}
+.totalMoneyBlock__promo {
+  width: 250px;
+  height: 30px;
+  border: grey 2px solid;
+  border-radius: 10px;
+}
+.block-with-cart-items {
+  display: flex;
+}
+
+.block-for-header-and-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  height: 30px;
+  background-color: red;
+  border-radius: 12px 12px 12px 12px/12px 12px 12px 12px;
+}
+.counter__counterLeftCross {
+  width: 30px;
+  background-color: blue;
+  border-radius: 12px 0px 0px 12px/12px 0px 0px 12px;
+}
+.counter__counterRightCross {
+  width: 30px;
+  background-color: green;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-radius: 0px 12px 12px 0px/0px 12px 12px 0px;
+}
+.counter__counterNumber {
+  display: flex;
+  align-items: center;
+}
+
 .band {
   height: 2px;
   background-color: #D8D8D8;
@@ -640,4 +706,4 @@ main {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=likeStyles.css.map */

@@ -1,5 +1,4 @@
-
-const render = (item, blocks) => {
+const render = (item, blocks, page) => {
 
     const block = document.createElement('div');     // Создание блока для контента
     block.classList.add("block", "center__block", "center")
@@ -13,8 +12,74 @@ const render = (item, blocks) => {
     price.classList.add("text", "block__price")
 
     const name = document.createElement('p');      // Добавление Названия
+    const containerName = document.createElement('div');
+
+
+    const counter = document.createElement('div');
+
+
+    if (page === "cart") {
+        counter.classList.add("counter");
+        const counterLeftCross = document.createElement('button');
+        counterLeftCross.classList.add("counter__counterLeftCross");
+        counterLeftCross.innerText = "-"
+        const counterRightCross = document.createElement('button');
+        counterRightCross.classList.add("counter__counterRightCross");
+        counterRightCross.innerText = "+"
+        const counterNumber = document.createElement('span');
+        counterNumber.innerText = item.total;
+        counterNumber.classList.add("counter__counterNumber");
+        counter.appendChild(counterLeftCross);
+        counter.appendChild(counterNumber);
+        counter.appendChild(counterRightCross);
+
+        // Функция увеличения и уменьшения количества товара
+        counterLeftCross.onclick = () => {
+            const goods = JSON.parse(localStorage.getItem("goods"))
+            let totalCount = localStorage.getItem("cartItems");
+            let good = goods.find(good => good.id === item.id)
+            if (good.total - 1 !== 0) {
+                let totalPrice = +localStorage.getItem("totalPrice");
+                totalPrice -= good.price;
+                localStorage.setItem("totalPrice", JSON.stringify(totalPrice))
+                good.total = good.total - 1;
+                totalCount--;
+                localStorage.setItem("cartItems", JSON.stringify(totalCount));
+                counterNumber.innerText = good.total;
+                localStorage.setItem("goods", JSON.stringify(goods))
+                document.querySelector(".cartCount").innerHTML = totalCount;
+                document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(totalCount);
+                document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
+                    item.innerText = +totalPrice;
+                })
+            }
+        }
+        counterRightCross.onclick = () => {
+            const goods = JSON.parse(localStorage.getItem("goods"))
+            let totalCount = localStorage.getItem("cartItems");
+            let good = goods.find(good => good.id === item.id)
+            let totalPrice = +localStorage.getItem("totalPrice");
+            totalPrice += good.price;
+            localStorage.setItem("totalPrice", JSON.stringify(totalPrice))
+
+            good.total = good.total + 1;
+            totalCount++;
+            console.log(totalCount + "___" + item.total)
+            localStorage.setItem("cartItems", JSON.stringify(totalCount));
+            counterNumber.innerText = good.total;
+            localStorage.setItem("goods", JSON.stringify(goods))
+            document.querySelector(".cartCount").innerHTML = totalCount;
+            document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(totalCount);
+            document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
+                item.innerText = +totalPrice;
+            })
+        }
+    }
     name.innerHTML = item.name;
     name.classList.add("block__name")
+    containerName.appendChild(name);
+    containerName.appendChild(counter);
+    containerName.classList.add("block-for-header-and-counter");
 
 
     const description = document.createElement('h6');      // Добавление Описания
@@ -22,8 +87,7 @@ const render = (item, blocks) => {
     description.classList.add("block__description")
 
 
-
-    if(item.isNew){
+    if (item.isNew) {
         const isNew = document.createElement('div');
         const isNewTextP = document.createElement('p');
 
@@ -34,7 +98,7 @@ const render = (item, blocks) => {
         block.appendChild(isNew);
     }
 
-    if(item.sale){
+    if (item.sale) {
         const isNew = document.createElement('div');
         const isNewTextP = document.createElement('p');
 
@@ -47,9 +111,7 @@ const render = (item, blocks) => {
     }
 
 
-
-
-    const hover = document.createElement('div');      // Добавление Названия
+    const hover = document.createElement('div');
     hover.classList.add("hover");
     const blockButton = document.createElement('button');
     const blockInputP = document.createElement('p');
@@ -64,6 +126,7 @@ const render = (item, blocks) => {
     blockButton.innerText = "Add to cart";
     blockButton.classList.add("hover__input");
     blockLikeImg.setAttribute("src", "../img/Furniture/Like.svg");
+
     blockLikeImg.style.marginRight = "10px"
 
     blockDiv.appendChild(blockButton);
@@ -85,9 +148,9 @@ const render = (item, blocks) => {
     blockLikeA.prepend(blockLikeImg);
 
 
-    blockShareA.setAttribute("href","#")
+    blockShareA.setAttribute("href", "#")
     blockShareA.classList.add("link")
-    blockLikeA.setAttribute("href","#")
+    blockLikeA.setAttribute("href", "#")
     blockLikeA.classList.add("link")
     blockLikeA.classList.add("link__like")
 
@@ -101,10 +164,9 @@ const render = (item, blocks) => {
     cartLikeShare.classList.add("cartLikeShare")
 
 
-
     // Добавление всего в блок, а потом блок на страницу
     block.appendChild(img);
-    block.appendChild(name);
+    block.appendChild(containerName);
     block.appendChild(description);
     block.appendChild(price);
     block.appendChild(cartLikeShare);
@@ -119,48 +181,66 @@ const render = (item, blocks) => {
     // При рендере добавление Лайков и В корзину
 
     favorite.onclick = () => {
-        const socks = JSON.parse(localStorage.getItem("socks"))
-        let sock = socks.find(sock => sock.id === item.id)
+        const goods = JSON.parse(localStorage.getItem("goods"))
+        let good = goods.find(good => good.id === item.id)
         let likeCounter = localStorage.getItem("likes")
 
-        if (!sock.like) {
+        if (!good.like) {
             likeCounter++;
             favorite.firstChild.setAttribute("src", "../img/Furniture/Like-red.svg");
         } else {
             likeCounter--;
             favorite.firstChild.setAttribute("src", "../img/Furniture/Like.svg");
         }
-        sock.like = !sock.like ;
+        good.like = !good.like;
 
-        localStorage.setItem("socks", JSON.stringify(socks))
+        localStorage.setItem("goods", JSON.stringify(goods))
 
         localStorage.setItem("likes", likeCounter)
         document.querySelector(".likeCount").innerHTML = likeCounter;
     }
 
     buy.onclick = () => {
-        const socks = JSON.parse(localStorage.getItem("socks"))
-        let sock = socks.find(sock => sock.id === item.id)
+        const goods = JSON.parse(localStorage.getItem("goods"))
+        let good = goods.find(good => good.id === item.id)
         let buyCounter = localStorage.getItem("cartItems")
+        let totalPrice = +localStorage.getItem("totalPrice");
 
-        if (!sock.cart) {
+
+        if (!good.cart) {
             buyCounter++;
+            totalPrice += good.price;
             buy.innerHTML = "Remove from cart";
-
         } else {
             buyCounter--;
+            totalPrice -= good.price;
             buy.innerHTML = "Add to cart";
-
+            // Если убрали из Корзины товар, то обнулить его total до 1,
+            // отрисовать новые Итого и счетчик cartItems, Cart == false, удалить элемент из корзины
+            if (page === "cart") {
+                totalPrice -= good.price * (good.total - 1);
+                buyCounter -= good.total - 1;
+                good.total = 1;
+                document.querySelectorAll(".block__name").forEach((item) => {
+                    if(item.textContent===good.name){
+                        item.parentNode.parentNode.removeChild(item.parentNode);
+                    }
+                })
+            }
         }
-        sock.cart = !sock.cart ;
+        good.cart = !good.cart;
 
-        localStorage.setItem("socks", JSON.stringify(socks))
-
+        localStorage.setItem("goods", JSON.stringify(goods))
+        localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
         localStorage.setItem("cartItems", buyCounter)
         document.querySelector(".cartCount").innerHTML = buyCounter;
+        if (page === "cart") {
+            document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(buyCounter);
+            document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
+                item.innerText = +totalPrice;
+            })
+        }
     }
-
-
 
 
     if (!item.like) {
@@ -176,6 +256,22 @@ const render = (item, blocks) => {
         buy.innerHTML = "Remove from cart";
     }
 
+    // Функция отрисовки слова "товар" в зависимости от количесвта товаров
+    const getNoun = (number) => {
+        let n = Math.abs(number);
+        n %= 100;
+        if (n >= 5 && n <= 20) {
+            return number + " товаров";
+        }
+        n %= 10;
+        if (n === 1) {
+            return number + " товар";
+        }
+        if (n >= 2 && n <= 4) {
+            return number + " товара";
+        }
+        return number + " товаров";
+    }
 
     let buyCounter = localStorage.getItem("cartItems")
     let likeCounter = localStorage.getItem("likes")
@@ -183,17 +279,18 @@ const render = (item, blocks) => {
     document.querySelector(".cartCount").innerHTML = buyCounter;
 
 
-
-
-
+    // Если отрисовка страницы Корзины
+    if (page === "cart") {
+        document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(buyCounter);
+    }
 
 
 }
 
 // Рендер каждого блока по массиву, 1 элемент - 1 блок
-const blockRender = (socks, blocks) => {
-    socks.forEach((item, index) => {
-        render(item, blocks, index)
+const blockRender = (goods, blocks, page) => {
+    goods.forEach((item, index) => {
+        render(item, blocks, page)
     })
 
     document.querySelector(".block-with-furniture").appendChild(blocks)
