@@ -364,14 +364,14 @@ main {
 }
 .tips-tricks__cross-left {
   top: 161px;
-  left: -24px;
+  left: -1px;
 }
 .tips-tricks__cross-left > img {
   transform: rotate(180deg);
 }
 .tips-tricks__cross-right {
   top: 161px;
-  right: -24px;
+  right: -1px;
 }
 .tips-tricks__text-content {
   padding: 16px;
