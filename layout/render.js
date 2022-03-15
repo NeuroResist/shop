@@ -191,6 +191,14 @@ const render = (item, blocks, page) => {
         } else {
             likeCounter--;
             favorite.firstChild.setAttribute("src", "../img/Furniture/Like.svg");
+            if (page === "likes") {
+                console.log("dasdasd")
+                document.querySelectorAll(".block__name").forEach((item) => {
+                    if(item.textContent===good.name){
+                        item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
+                    }
+                })
+            }
         }
         good.like = !good.like;
 
