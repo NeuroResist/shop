@@ -378,14 +378,14 @@ display: block;
     align-items: center;
     &-left{
       top: 161px;
-      left: -24px;
+      left: -1px;
     }
     &-left > img{
       transform: rotate(180deg);
     }
     &-right{
       top: 161px;
-      right: -24px;
+      right: -1px;
     }
   }
   &__text-content{
