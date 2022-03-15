@@ -101,190 +101,6 @@ main{
   left: 10px;
 }
 
-
-
-
-.high-quality-block{
-  position: absolute;
-  top: 16px;
-  left: 100px;
-  width: 494px;
-  height: 553px;
-  background-color: white;
-  z-index: 3;
-  &__padding{
-    padding: 60px;
-  }
-  &__header{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 120%;
-    color: #3A3A3A;
-    margin-bottom: 16px;
-  }
-  &__paragraph{
-    max-width: 90%;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 150%;
-    color: #898989;
-    margin-bottom: 48px;
-  }
-  &__shop-now-button{
-    height: 78px;
-    width: 374px;
-    border-radius: 0;
-    background: #E89F71;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 150%;
-    color: #FFFFFF;
-  }
-}
-
-
-
-// Картинки на заднем фоне
-.three-background-img{
-  top: 96px;
-  position: relative;
-  height: 553px;
-  margin-bottom: 202px;
-  &__left-img{
-    position: absolute;
-    left: 0;
-  }
-  &__center-img{
-    position: absolute;
-    left: 406px;
-  }
-  &__right-img{
-    position: absolute;
-    left: 1372px;
-  }
-}
-
-// Блок с ценой к картинке
-.bohauss-block{
-  position: absolute;
-  top: 365px;
-  left: 600px;
-  width: 294px;
-  height: 148px;
-  background-color: #fff;
-  box-sizing: border-box;
-  padding: 24px;
-  z-index: 10;
-  &__header{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 120%;
-    color: #3A3A3A;
-    margin-bottom: 4px;
-  }
-  &__description{
-    @include description;
-    margin-bottom: 8px;
-    color: #616161;
-  }
-  &__price{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 150%;
-    color: #3A3A3A;
-  }
-}
-
-
-// 4 блока с гарантиями покупателю
-.customer-assistance{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 104px;
-  & > section {
-    margin: 10px 0;
-  }
-  &__description{
-    @include description;
-    color: #898989;
-  }
-  &__header{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 150%;
-    color: #3A3A3A;
-  }
-  &__icon{
-    margin: 0 24px;
-  }
-}
-
-
-
-
-// Слайдер
-.points{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 100px;
-}
-.dot{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin: 0 5px;
-  &_focused{
-    background-color:#E89F71;
-  }
-  &__left-cross{
-    transform: rotate(180deg);
-  }
-  &_unfocused{
-    background-color: #D8D8D8;
-  }
-  &__left-cross, &__right-cross{
-    background-color:#E89F71;
-    @include centerMixin;
-  }
-}
-
-// Кнопка скрыть-раскрыть
-.show-more{
-  display: flex;
-  justify-content: center;
-  &__button{
-    cursor: pointer;
-    width: 245px;
-    height: 48px;
-    background: #FFFFFF;
-    border: 1px solid #E89F71;
-    margin-bottom: 20px;
-  }
-  &__text{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 150%;
-    color: #E89F71;
-  }
-}
-
 .center{
   position: relative;
   display: flex;
@@ -310,17 +126,6 @@ main{
     font-size: 24px;
   }
 }
-.headline{
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 120%;
-  color: #3A3A3A;
-  margin-bottom: 32px;
-  text-align: center;
-}
-
 
 .margin-bottom{
   margin-bottom: 10px;
@@ -361,129 +166,9 @@ main{
   margin-bottom: 16px;
 }
 
-
-.tips-tricks{
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  &__cross{
-    cursor: pointer;
-    position: absolute;
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &-left{
-      top: 161px;
-      left: -24px;
-    }
-    &-left > img{
-      transform: rotate(180deg);
-    }
-    &-right{
-      top: 161px;
-      right: -24px;
-    }
-  }
-  &__text-content{
-    padding: 16px;
-  }
-  &__block{
-    max-width: 391px;
-    max-height: 370px;
-
-  }
-  &__block:hover{
-    box-shadow: 5px 1px 18px 4px rgba(34, 60, 80, 0.2);
-  }
-  &__header{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 120%;
-    color: #3A3A3A;
-    margin-bottom: 8px;
-  }
-  &__date{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #898989;
-  }
-}
-
-
-.gallery{
-  margin-bottom: 40px;
-  &__header-Share-your-setup-with{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 150%;
-    text-align: center;
-    color: #616161;
-    margin-bottom: 8px;
-  }
-  &__header-Funiro-Furniture{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 120%;
-    text-align: center;
-    color: #3A3A3A;
-  }
-}
 .margin-bottom-16px{
   margin-bottom: 16px;
 }
-.footer-content{
-  display: flex;
-  justify-content: space-between;
-  &__header{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    color: #000000;
-  }
-  &__text{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #616161;
-  }
-  &__contact{
-    max-width: 249px;
-  }
-  &__account{
-    max-width: 94px;
-  }
-  &__stay-connected{
-    max-width: 180px;
-  }
-  &__menu{
-    max-width: 104px;
-  }
-  &__stay-updated{
-    max-width: 292px;
-  }
-  &__location, &__phone{
-    display: flex;
-    align-items: center;
-  }
-}
-
 .list{
   &__element{
     list-style-type: none;
@@ -576,11 +261,47 @@ main{
 
 
 // footer
-.band{
-  height: 2px;
-  background-color: #D8D8D8;
-  margin-bottom: 80px;
+
+.footer-content{
+  display: flex;
+  justify-content: space-between;
+  &__header{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+  }
+  &__text{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #616161;
+  }
+  &__contact{
+    max-width: 249px;
+  }
+  &__account{
+    max-width: 94px;
+  }
+  &__stay-connected{
+    max-width: 180px;
+  }
+  &__menu{
+    max-width: 104px;
+  }
+  &__stay-updated{
+    max-width: 292px;
+  }
+  &__location, &__phone{
+    display: flex;
+    align-items: center;
+  }
 }
+
 .email-send-button{
   cursor: pointer;
   width: 46px;
