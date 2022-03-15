@@ -221,9 +221,10 @@ const render = (item, blocks, page) => {
                 totalPrice -= good.price * (good.total - 1);
                 buyCounter -= good.total - 1;
                 good.total = 1;
+                console.log("dasdasd")
                 document.querySelectorAll(".block__name").forEach((item) => {
                     if(item.textContent===good.name){
-                        item.parentNode.parentNode.removeChild(item.parentNode);
+                        item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
                     }
                 })
             }
