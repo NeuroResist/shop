@@ -52,7 +52,7 @@ main {
   top: 0;
   height: 131px;
   background-color: #FCF8F3;
-  width: 100vw;
+  width: 100%;
 }
 
 .logo-text {
@@ -273,29 +273,52 @@ main {
   align-items: center;
 }
 
+.block-for-description-and-counter {
+  display: flex;
+  justify-content: space-between;
+}
+
 .counter {
   display: flex;
   justify-content: space-between;
   width: 120px;
   height: 30px;
-  background-color: red;
+  background-color: #F1F0EC;
   border-radius: 12px 12px 12px 12px/12px 12px 12px 12px;
 }
 .counter__counterLeftCross {
+  cursor: pointer;
+  border: none;
   width: 30px;
-  background-color: blue;
-  border-radius: 12px 0px 0px 12px/12px 0px 0px 12px;
+  background-color: #F1F0EC;
+  border-radius: 12px 0 0 12px/12px 0 0 12px;
 }
 .counter__counterRightCross {
+  cursor: pointer;
+  border: none;
   width: 30px;
-  background-color: green;
+  background-color: #F1F0EC;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  border-radius: 0px 12px 12px 0px/0px 12px 12px 0px;
+  border-radius: 0 12px 12px 0/0 12px 12px 0;
 }
 .counter__counterNumber {
   display: flex;
   align-items: center;
+}
+
+.deleteButton {
+  height: 20px;
+  border-radius: 4px;
+  border: none;
+  align-items: flex-start;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 22px;
+  color: #000000;
+  cursor: pointer;
 }
 
 .footer-content {
@@ -486,6 +509,11 @@ main {
     max-width: 966px;
   }
 }
+@media screen and (max-width: 618px) {
+  .main-block {
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 664px) {
   .high-quality-block {
     position: absolute;
@@ -578,6 +606,11 @@ main {
 
   .main-block {
     margin: 0;
+  }
+}
+@media screen and (max-width: 965px) {
+  .apricot-background {
+    width: 60%;
   }
 }
 

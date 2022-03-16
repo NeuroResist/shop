@@ -54,6 +54,15 @@ main{
   height: 45px;
   position: relative;
   padding: 40px 0 40px 0;
+  &__background{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    height: 131px;
+    background-color: #FCF8F3;
+    width: 100%;
+  }
 }
 .logo-text{
   font-family: 'Gilroy';
@@ -83,7 +92,6 @@ main{
   position: absolute;
   top:0;
   left: 0;
-  z-index: -1;
   height: 131px;
   width: 964px;
   background-color: #F9F1E7;
@@ -104,37 +112,9 @@ main{
 }
 
 
-
-
-
-
-// 4 блока с гарантиями покупателю
-.customer-assistance{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 104px;
-  & > section {
-    margin: 10px 0;
-  }
-  &__description{
-    @include description;
-    color: #898989;
-  }
-  &__header{
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 150%;
-    color: #3A3A3A;
-  }
-  &__icon{
-    margin: 0 24px;
-  }
+.main-block{
+  margin-top: 10px;
 }
-
 .center{
   position: relative;
   display: flex;
@@ -411,14 +391,14 @@ main{
   &__counterLeftCross{
     width: 30px;
     background-color: blue;
-    border-radius: 12px 0px 0px 12px / 12px 0px 0px 12px;
+    border-radius: 12px 0 0 12px / 12px 0 0 12px;
   }
   &__counterRightCross{
     width: 30px;
     background-color: green;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-radius: 0px 12px 12px 0px / 0px 12px 12px 0px;
+    border-radius: 0 12px 12px 0 / 0 12px 12px 0;
   }
   &__counterNumber{
     display: flex;
@@ -668,5 +648,11 @@ main{
   }
   .list{
     display: none;
+  }
+}
+
+@media screen and (max-width: 965px) {
+  .apricot-background{
+    width: 60%;
   }
 }

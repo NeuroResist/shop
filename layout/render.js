@@ -16,6 +16,7 @@ const render = (item, blocks, page) => {
 
 
     const counter = document.createElement('div');
+    const deleteGood = document.createElement('div');
 
 
     if (page === "cart") {
@@ -74,6 +75,13 @@ const render = (item, blocks, page) => {
                 item.innerText = +totalPrice + "₽";
             })
         }
+
+        // Кнопка Удалить товар из корзины
+        const deleteGoodButton = document.createElement('button');
+        deleteGoodButton.classList.add("deleteButton");
+        deleteGoodButton.innerText = "Удалить из корзины";
+        deleteGood.appendChild(deleteGoodButton)
+        deleteGood.classList.add("block-for-description-and-counter")
     }
     name.innerHTML = item.name;
     name.classList.add("block__name")
@@ -114,7 +122,6 @@ const render = (item, blocks, page) => {
     const hover = document.createElement('div');
     hover.classList.add("hover");
     const blockButton = document.createElement('button');
-    const blockInputP = document.createElement('p');
     const blockDiv = document.createElement('div');
     const blockShare = document.createElement('div');
     const blockShareA = document.createElement('a');
@@ -165,11 +172,12 @@ const render = (item, blocks, page) => {
     block.appendChild(cartLikeShare);
     block.appendChild(hover);
     }
+    deleteGood.prepend(description)
 
     // Добавление всего в блок, а потом блок на страницу
     block.appendChild(img);
     block.appendChild(containerName);
-    block.appendChild(description);
+    block.appendChild(deleteGood);
     block.appendChild(price);
 
 
@@ -183,13 +191,13 @@ const render = (item, blocks, page) => {
     favorite.onclick = () => {
         const goods = JSON.parse(localStorage.getItem("goods"))
         let good = goods.find(good => good.id === item.id)
-        let likeCounter = localStorage.getItem("likes")
+        let likeCounterOnclick = localStorage.getItem("likes")
 
         if (!good.like) {
-            likeCounter++;
+            likeCounterOnclick++;
             favorite.firstChild.setAttribute("src", "../img/Furniture/Like-red.svg");
         } else {
-            likeCounter--;
+            likeCounterOnclick--;
             favorite.firstChild.setAttribute("src", "../img/Furniture/Like.svg");
 
         }
@@ -197,11 +205,12 @@ const render = (item, blocks, page) => {
 
         localStorage.setItem("goods", JSON.stringify(goods))
 
-        localStorage.setItem("likes", likeCounter)
-        document.querySelector(".likeCount").innerHTML = likeCounter;
+        localStorage.setItem("likes", likeCounterOnclick)
+        document.querySelector(".likeCount").innerHTML = likeCounterOnclick;
     }
 
-    buy.onclick = () => {
+
+    deleteGood.onclick = buy.onclick = () => {
         const goods = JSON.parse(localStorage.getItem("goods"))
         let good = goods.find(good => good.id === item.id)
         let buyCounter = localStorage.getItem("cartItems")
@@ -275,8 +284,7 @@ const render = (item, blocks, page) => {
     }
 
     let buyCounter = localStorage.getItem("cartItems")
-    let likeCounter = localStorage.getItem("likes")
-    document.querySelector(".likeCount").innerHTML = likeCounter;
+    document.querySelector(".likeCount").innerHTML = localStorage.getItem("likes");
     document.querySelector(".cartCount").innerHTML = buyCounter;
 
 
@@ -290,7 +298,7 @@ const render = (item, blocks, page) => {
 
 // Рендер каждого блока по массиву, 1 элемент - 1 блок
 const blockRender = (goods, blocks, page) => {
-    goods.forEach((item, index) => {
+    goods.forEach((item) => {
         render(item, blocks, page)
     })
 

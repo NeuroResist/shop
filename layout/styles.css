@@ -43,7 +43,7 @@ main {
   top: 0;
   height: 774px;
   background-color: #FCF8F3;
-  width: 100vw;
+  width: 100%;
 }
 
 .logo-text {
@@ -378,7 +378,6 @@ main {
   left: -8px;
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
 .tips-tricks__cross {
   cursor: pointer;
@@ -784,6 +783,17 @@ main {
 
 .display-block {
   display: block;
+}
+
+@media screen and (max-width: 965px) {
+  .apricot-background {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1224px) {
+  .tips-tricks {
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
