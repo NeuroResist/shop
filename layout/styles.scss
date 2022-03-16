@@ -449,6 +449,7 @@ display: block;
   margin-bottom: 43px;
   position: relative;
   left: -8px;
+  overflow: hidden;
   &__cross{
     cursor: pointer;
     position: absolute;

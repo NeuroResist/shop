@@ -415,6 +415,7 @@ main {
   margin-bottom: 43px;
   position: relative;
   left: -8px;
+  overflow: hidden;
 }
 .tips-tricks__cross {
   cursor: pointer;
