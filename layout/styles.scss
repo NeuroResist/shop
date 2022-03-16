@@ -539,6 +539,9 @@ display: block;
 .footer-content{
   display: flex;
   justify-content: space-between;
+  &__item{
+    cursor: pointer;
+  }
   &__header{
     font-family: 'Gilroy';
     font-style: normal;

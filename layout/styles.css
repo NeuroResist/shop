@@ -506,6 +506,9 @@ main {
   display: flex;
   justify-content: space-between;
 }
+.footer-content__item {
+  cursor: pointer;
+}
 .footer-content__header {
   font-family: "Gilroy";
   font-style: normal;

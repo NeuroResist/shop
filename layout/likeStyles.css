@@ -272,6 +272,9 @@ main {
   line-height: 29px;
   color: #000000;
 }
+.footer-content__item {
+  cursor: pointer;
+}
 .footer-content__text {
   font-family: "Gilroy";
   font-style: normal;
@@ -629,6 +632,13 @@ main {
   .apricot-background {
     width: 60%;
   }
+}
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
 }
 
 /*# sourceMappingURL=likeStyles.css.map */
