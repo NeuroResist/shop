@@ -1,12 +1,9 @@
 @import url("../fonts/Gilroy/stylesheet.css");
 @import url("../fonts/TT-Bricks/stylesheet.css");
 
-body{
-  //overflow-x:hidden;  /*для горизонтального*/
-}
 main{
   position: relative;
-  min-height: 477px;
+  min-height: calc(100vh - 125px - 237px);
 }
 @mixin centerMixin {
   display: flex;

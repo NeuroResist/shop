@@ -372,12 +372,49 @@ main {
   margin-bottom: 16px;
 }
 
-.tips-tricks {
-  margin-bottom: 43px;
+.slider {
+  position: relative;
+}
+
+.slider__wrapper {
+  overflow: hidden;
+}
+
+.slider__items {
+  display: flex;
+}
+
+.slider__item {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 7rem;
+}
+
+.wrapper-for-slider {
   position: relative;
   left: -8px;
   display: flex;
   justify-content: space-between;
+}
+
+.tips-tricks-wrapper {
+  z-index: -1;
+  transform: translateX(1px);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.tips-tricks {
+  margin-bottom: 43px;
+  position: relative;
+  left: -8px;
 }
 .tips-tricks__cross {
   cursor: pointer;

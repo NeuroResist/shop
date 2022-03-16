@@ -12,7 +12,7 @@ const firstEight = socks.slice(0, 4);
 const remaining = socks.slice(4, socks.length + 1);
 console.log(firstEight)
 console.log(remaining)
-//slider();
+slider();
 
 
 

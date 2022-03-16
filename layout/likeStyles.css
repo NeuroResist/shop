@@ -2,8 +2,7 @@
 @import url("../fonts/TT-Bricks/stylesheet.css");
 main {
   position: relative;
-  min-height: 477px;
-  height: calc(100vh - 125px - 237px);
+  min-height: calc(100vh - 125px - 237px);
 }
 
 .relative {
