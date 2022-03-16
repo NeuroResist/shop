@@ -6,6 +6,8 @@ body{
 }
 main{
   position: relative;
+  min-height: 477px;
+  height: calc(100vh - 125px - 237px);
 }
 @mixin centerMixin {
   display: flex;
@@ -210,6 +212,9 @@ main{
 }
 
 
+
+
+//
 .tips-tricks{
   display: flex;
   justify-content: space-between;
@@ -561,9 +566,19 @@ main{
 }
 
 
+
 @media screen and (max-width: 470px) {
   .customer-assistance{
     justify-content: center;
+  }
+  .gallery__header-Funiro-Furniture{
+    font-size: 26px;
+  }
+  .gallery__header-Share-your-setup-with{
+    font-size: 16px;
+  }
+  .gallery__image{
+    top: 0;
   }
 }
 @media screen and (max-width: 966px) {
@@ -571,15 +586,87 @@ main{
     justify-content: center;
   }
 }
+@media screen and (max-width: 1276px) {
+  .container-for-furniture{
+    max-width: 966px;
+  }
+  .main-block{
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 664px) {
+  .high-quality-block{
+    position: absolute;
+    top: -81px;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    height: auto;
+    background-color: white;
+    z-index: 3;
+    &__padding{
+      padding: 20px;
+    }
+    &__header{
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: #3A3A3A;
+      margin-bottom: 16px;
+    }
+    &__paragraph{
+      max-width: 90%;
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      color: #898989;
+      margin-bottom: 48px;
+    }
+    &__shop-now-button{
+      border: none;
+      cursor: pointer;
+      height: 78px;
+      width: 100%;
+      border-radius: 0;
+      background: #E89F71;
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 150%;
+      color: #FFFFFF;
+    }
+  }
+}
 
 @media screen and (max-width: 1040px) {
+  .customer-assistance{
+    flex-direction: column;
+  }
+  .headline__tips-tricks{
+    margin-left: 0;
+  }
+  .footer-content__phone, .footer-content__location{
+    justify-content: center;
+  }
   .footer-content{
     flex-direction: column;
+    align-items: center;
+    &__header{
+      text-align: center;
+    }
+    &__contact{
+      text-align: center;
+    }
   }
   .footer-content > section{
     margin-bottom: 20px;
   }
-  .list, .enter-email{
+  .list{
     display: none;
   }
 }

@@ -50,7 +50,7 @@ const render = (item, blocks, page) => {
                 document.querySelector(".cartCount").innerHTML = totalCount;
                 document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(totalCount);
                 document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
-                    item.innerText = +totalPrice;
+                    item.innerText = +totalPrice + "₽";
                 })
             }
         }
@@ -71,7 +71,7 @@ const render = (item, blocks, page) => {
             document.querySelector(".cartCount").innerHTML = totalCount;
             document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(totalCount);
             document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
-                item.innerText = +totalPrice;
+                item.innerText = +totalPrice + "₽";
             })
         }
     }
@@ -84,7 +84,7 @@ const render = (item, blocks, page) => {
 
     const description = document.createElement('h6');      // Добавление Описания
     description.innerHTML = item.description;
-    description.classList.add("block__description")
+    description.classList.add("block__description");
 
 
     if (item.isNew) {
@@ -157,22 +157,22 @@ const render = (item, blocks, page) => {
     const buy = blockButton;
     const favorite = blockLikeA;
 
-
+    if (page!=="cart"){
     const cartLikeShare = document.createElement('div');
     cartLikeShare.appendChild(blockButton);
     cartLikeShare.appendChild(blockDiv);
-    cartLikeShare.classList.add("cartLikeShare")
-
+    cartLikeShare.classList.add("cartLikeShare");
+    block.appendChild(cartLikeShare);
+    block.appendChild(hover);
+    }
 
     // Добавление всего в блок, а потом блок на страницу
     block.appendChild(img);
     block.appendChild(containerName);
     block.appendChild(description);
     block.appendChild(price);
-    block.appendChild(cartLikeShare);
 
 
-    block.appendChild(hover);
     //block.appendChild(buyAndFavorite)
     block.style.margin = "0 12px 28px 12px"
     blocks.appendChild(block);
@@ -191,14 +191,7 @@ const render = (item, blocks, page) => {
         } else {
             likeCounter--;
             favorite.firstChild.setAttribute("src", "../img/Furniture/Like.svg");
-            if (page === "likes") {
-                console.log("dasdasd")
-                document.querySelectorAll(".block__name").forEach((item) => {
-                    if(item.textContent===good.name){
-                        item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
-                    }
-                })
-            }
+
         }
         good.like = !good.like;
 
@@ -229,7 +222,6 @@ const render = (item, blocks, page) => {
                 totalPrice -= good.price * (good.total - 1);
                 buyCounter -= good.total - 1;
                 good.total = 1;
-                console.log("dasdasd")
                 document.querySelectorAll(".block__name").forEach((item) => {
                     if(item.textContent===good.name){
                         item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
@@ -246,7 +238,7 @@ const render = (item, blocks, page) => {
         if (page === "cart") {
             document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(buyCounter);
             document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
-                item.innerText = +totalPrice;
+                item.innerText = +totalPrice + "₽";
             })
         }
     }

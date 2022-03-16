@@ -25,7 +25,7 @@ localStorage.setItem("totalPrice", JSON.stringify(price));
 
 
 document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item)=>{
-    item.innerText = price;
+    item.innerText = price + "₽";
 })
 
 

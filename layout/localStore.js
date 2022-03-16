@@ -10,7 +10,7 @@ if(!localStorage.getItem("goods")){
             like: false,
             cart: false,
             total: 1,
-            sale: 0,
+            sale: 30,
             isNew: false
         },
         {
@@ -23,7 +23,7 @@ if(!localStorage.getItem("goods")){
             cart: false,
             total: 1,
             sale: 0,
-            isNew: true
+            isNew: false
         },
         {
             id: 3,
@@ -34,8 +34,8 @@ if(!localStorage.getItem("goods")){
             like: false,
             cart: false,
             total: 1,
-            sale: 0,
-            isNew: true
+            sale: 50,
+            isNew: false
         },
         {
             id: 4,
@@ -46,8 +46,8 @@ if(!localStorage.getItem("goods")){
             like: false,
             cart: false,
             total: 1,
-            sale: 70,
-            isNew: false
+            sale: 0,
+            isNew: true
         },
         {
             id: 5,
@@ -70,8 +70,8 @@ if(!localStorage.getItem("goods")){
             like: false,
             cart: false,
             total: 1,
-            sale: 75,
-            isNew: false
+            sale: 0,
+            isNew: true
         },
         {
             id: 7,
@@ -82,8 +82,8 @@ if(!localStorage.getItem("goods")){
             like: false,
             cart: false,
             total: 1,
-            sale: 30,
-            isNew: true
+            sale: 50,
+            isNew: false
         },
         {
             id: 8,
@@ -91,6 +91,54 @@ if(!localStorage.getItem("goods")){
             img: "../img/Furniture/8.svg",
             price: 800,
             description: "Minimalist flower pot",
+            like: false,
+            cart: false,
+            total: 1,
+            sale: 0,
+            isNew: true
+        },
+        {
+            id: 9,
+            name: "Ваза #1",
+            img: "../img/Furniture/8.svg",
+            price: 900,
+            description: "Реально Ваза Ваза #1",
+            like: false,
+            cart: false,
+            total: 1,
+            sale: 0,
+            isNew: false
+        },
+        {
+            id: 10,
+            name: "Ваза #2",
+            img: "../img/Furniture/8.svg",
+            price: 1000,
+            description: "Еще 1 ваза #2",
+            like: false,
+            cart: false,
+            total: 1,
+            sale: 0,
+            isNew: false
+        },
+        {
+            id: 11,
+            name: "Ваза #3",
+            img: "../img/Furniture/8.svg",
+            price: 1100,
+            description: "Третья ваза #3",
+            like: false,
+            cart: false,
+            total: 1,
+            sale: 0,
+            isNew: false
+        },
+        {
+            id: 12,
+            name: "Ваза #4",
+            img: "../img/Furniture/8.svg",
+            price: 1200,
+            description: "Самая крутая ваза #4",
             like: false,
             cart: false,
             total: 1,

@@ -26,7 +26,7 @@ blockRender(remaining, blocks);
 
 let child = blocks.childNodes;
 child.forEach((item,i)=>{
-    if(i>=4){
+    if(i>=8){
         child.item(i).style.display = "none";
     }
 });
@@ -38,7 +38,7 @@ show.onclick = () => {
 
         let child = blocks.childNodes;
         child.forEach((item,i)=>{
-            if(i>=4){
+            if(i>=8){
                 item.style.display = "block";
             }
         });
@@ -47,7 +47,7 @@ show.onclick = () => {
     } else {
         let child = blocks.childNodes;
         child.forEach((item,i)=>{
-            if(i>=4){
+            if(i>=8){
                 item.style.display = "none";
             }
         });

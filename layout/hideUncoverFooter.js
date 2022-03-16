@@ -1,14 +1,14 @@
-const menuElements = document.querySelector(".footer-content").children;
 
+const menuElements = document.querySelectorAll(".footer-content__item");
 for(let item of menuElements){
     let isClicked = false;
     item.onclick = ()=>{
         if(window.screen.width<1040) {
             console.log(item.querySelector(".list"))
             if (!isClicked) {
-                item.querySelector(".list").style.display = "block";
+                item.querySelector(".list").classList.add("display-block")
             } else {
-                item.querySelector(".list").style.display = "none";
+                item.querySelector(".list").classList.remove("display-block")
             }
             isClicked = !isClicked;
         }
