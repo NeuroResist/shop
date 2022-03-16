@@ -404,11 +404,11 @@ main {
 
 .tips-tricks-wrapper {
   z-index: -1;
-  transform: translateX(1px);
+  transition: transform 0.5s;
+  transform: translateX(635px);
   position: relative;
   display: flex;
-  justify-content: space-between;
-  overflow: hidden;
+  justify-content: center;
 }
 
 .tips-tricks {
@@ -444,6 +444,7 @@ main {
 .tips-tricks__block {
   max-width: 391px;
   max-height: 370px;
+  margin: 0 16px;
 }
 .tips-tricks__block:hover {
   box-shadow: 5px 1px 18px 4px rgba(34, 60, 80, 0.2);
