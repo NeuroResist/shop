@@ -1,5 +1,4 @@
-//import {slider} from "./slider.js"
-import {blockRender} from "./render.js"
+import {blockRender} from "/js/render.js"
 
 
 // Взятие носков с параметрами

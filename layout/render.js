@@ -48,7 +48,7 @@ const render = (item, blocks, page) => {
                 localStorage.setItem("cartItems", JSON.stringify(totalCount));
                 counterNumber.innerText = good.total;
                 localStorage.setItem("goods", JSON.stringify(goods))
-                document.querySelector(".cartCount").innerHTML = totalCount;
+                document.querySelector(".cart-count").innerHTML = totalCount;
                 document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(totalCount);
                 document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
                     item.innerText = +totalPrice + "₽";
@@ -69,7 +69,7 @@ const render = (item, blocks, page) => {
             localStorage.setItem("cartItems", JSON.stringify(totalCount));
             counterNumber.innerText = good.total;
             localStorage.setItem("goods", JSON.stringify(goods))
-            document.querySelector(".cartCount").innerHTML = totalCount;
+            document.querySelector(".cart-count").innerHTML = totalCount;
             document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(totalCount);
             document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
                 item.innerText = +totalPrice + "₽";
@@ -206,7 +206,7 @@ const render = (item, blocks, page) => {
         localStorage.setItem("goods", JSON.stringify(goods))
 
         localStorage.setItem("likes", likeCounterOnclick)
-        document.querySelector(".likeCount").innerHTML = likeCounterOnclick;
+        document.querySelector(".like-count").innerHTML = likeCounterOnclick;
     }
 
 
@@ -243,7 +243,7 @@ const render = (item, blocks, page) => {
         localStorage.setItem("goods", JSON.stringify(goods))
         localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
         localStorage.setItem("cartItems", buyCounter)
-        document.querySelector(".cartCount").innerHTML = buyCounter;
+        document.querySelector(".cart-count").innerHTML = buyCounter;
         if (page === "cart") {
             document.querySelector(".totalMoneyBlock__count-of-items").innerHTML = getNoun(buyCounter);
             document.querySelectorAll(".totalMoneyBlock__count-of-money").forEach((item) => {
@@ -284,8 +284,8 @@ const render = (item, blocks, page) => {
     }
 
     let buyCounter = localStorage.getItem("cartItems")
-    document.querySelector(".likeCount").innerHTML = localStorage.getItem("likes");
-    document.querySelector(".cartCount").innerHTML = buyCounter;
+    document.querySelector(".like-count").innerHTML = localStorage.getItem("likes");
+    document.querySelector(".cart-count").innerHTML = buyCounter;
 
 
     // Если отрисовка страницы Корзины

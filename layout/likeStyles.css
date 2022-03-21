@@ -1,5 +1,4 @@
 @import url("../fonts/Gilroy/stylesheet.css");
-@import url("../fonts/TT-Bricks/stylesheet.css");
 main {
   position: relative;
   min-height: calc(100vh - 125px - 237px);
@@ -69,7 +68,7 @@ main {
   height: 40px;
 }
 
-.cartLikeAvatar {
+.cart-like-avatar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -84,7 +83,7 @@ main {
   background-color: #F9F1E7;
 }
 
-.cartCount, .likeCount {
+.cart-count, .like-count {
   color: white;
   line-height: 14px;
   font-size: 12px;
@@ -319,10 +318,10 @@ main {
   color: #616161;
 }
 
-.totalMoneyBlock {
+.total-money-block {
   width: 260px;
 }
-.totalMoneyBlock__price {
+.total-money-block__price {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -333,7 +332,7 @@ main {
   line-height: 150%;
   color: #000;
 }
-.totalMoneyBlock__total {
+.total-money-block__total {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -344,7 +343,7 @@ main {
   line-height: 150%;
   color: #000;
 }
-.totalMoneyBlock__promo {
+.total-money-block__promo {
   width: 250px;
   height: 30px;
   border: grey 2px solid;
@@ -442,7 +441,7 @@ main {
   padding-bottom: 30px;
 }
 
-.cartLikeShare {
+.cart-like-share {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -483,7 +482,7 @@ main {
   align-items: center;
 }
 
-.block:hover .cartLikeShare {
+.block:hover .cart-like-share {
   display: flex;
   flex-direction: column;
   justify-content: center;
